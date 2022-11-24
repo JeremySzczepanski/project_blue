@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'template.html.twig' %}
+
+{% block title %}
+    {{ prenom }}  {{ nom }}
+{% endblock %}
+
+{% block PageTitle %}
+    Page First
+{% endblock %}
+
+
+{% block body %}
+    <p>Aujourd'hui on est le : {{ "now" | date("d/m/Y") }}</p>
+    <h1>Hello {{ prenom | capitalize }} {{ nom | capitalize }} </h1>
+    <img src="{{asset('assets/images/') ~ path | defaultImage }}" alt="">
+    <p>Mon URL absolue est : {{ url('first') }}</p>
+{% endblock %}

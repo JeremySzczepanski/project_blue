@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ToDoController extends AbstractController
 {
     #[Route('/todo', name: 'todo')]
-    public function index(Request $request): Response{
+    public function index(Request $request){
 
         $session = $request->getSession();
         // Afficher notre tableau de todo
